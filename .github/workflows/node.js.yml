@@ -27,5 +27,21 @@ jobs:
     - run: npm ci
     - run: npm install npm@latest -g
     - run: npm install
-    - run: node index.js
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Deploy to EC2
+      run: |
+        cd /home/ubuntu/test-cicd
+        git pull origin main
+        npm install
+        node index.js
+
 
