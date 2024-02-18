@@ -37,11 +37,11 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Deploy to EC2
+    - name: Deploy to Cloud
       run: |
         cd /home/ubuntu/test-cicd/_work/test-ci-cd/test-ci-cd
         git pull origin main
         npm install
-        node index.js
+        node index.js &
 
 
