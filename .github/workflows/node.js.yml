@@ -39,7 +39,7 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        cd /home/ubuntu/test-cicd
+        cd /home/ubuntu/test-cicd/_work/test-ci-cd/test-ci-cd
         git pull origin main
         npm install
         node index.js
