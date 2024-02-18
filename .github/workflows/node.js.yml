@@ -38,8 +38,5 @@ jobs:
       run: |
         cd /home/ubuntu/test-cicd/_work/test-ci-cd/test-ci-cd
         git pull origin main
-        cd /backend/
-        npm install
-        cd ../frontend/
         npm install
         pm2 restart backend &
